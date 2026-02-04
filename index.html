@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Crescent City Shofur | Regal Transportation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title> Crescent City Shofur | Regal Transportation</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -11,17 +11,16 @@
     <style>
         :root { 
             --gold: #fcf6ba; 
-            --deep-purple: #2e0854; 
-            --royal-purple: #4b0082;
+            --deep-purple: #1a0533; 
         }
 
         body { 
             font-family: 'Montserrat', sans-serif; 
             background-color: #0a0118;
-            /* THEMED PURPLE GRADIENT BACKGROUND */
+            /* REFINED REGAL PURPLE BURST BACKGROUND */
             background-image: 
-                radial-gradient(circle at top, rgba(75,0,130,0.6) 0%, rgba(10,1,24,1) 80%),
-                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+                radial-gradient(circle at 50% 20%, rgba(75,0,130,0.8) 0%, rgba(10,1,24,1) 75%);
+            background-attachment: fixed;
             color: #ffffff;
             min-height: 100vh;
             margin: 0;
@@ -32,7 +31,6 @@
 
         .regal-header { font-family: 'Cinzel', serif; }
 
-        /* PURPLE & GOLD SHIMMER */
         .gold-shimmer {
             color: var(--gold);
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
@@ -44,35 +42,32 @@
 
         @keyframes shimmer { to { background-position: 200% center; } }
 
-        /* FORCED CENTERING */
-        .brand-centering {
+        .main-wrapper {
             width: 100%;
-            text-align: center;
-            padding: 50px 20px 20px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
+            padding: 40px 20px;
         }
 
         .glass-panel {
             background: rgba(46, 8, 84, 0.4);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(252, 246, 186, 0.2);
-            box-shadow: 0 0 30px rgba(75, 0, 130, 0.5);
-            border-radius: 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(252, 246, 186, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border-radius: 28px;
+            width: 100%;
         }
 
         .input-field {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(252, 246, 186, 0.3);
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(252, 246, 186, 0.2);
             color: white;
             text-align: center;
-        }
-
-        .input-field:focus {
-            border-color: var(--gold);
-            background: rgba(255, 255, 255, 0.1);
-            outline: none;
+            font-size: 16px !important;
         }
 
         .action-btn {
@@ -80,97 +75,83 @@
             color: #1a0533;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.4);
+            letter-spacing: 0.15em;
         }
 
         .tesla-img {
-            width: 100%;
-            max-width: 350px;
-            filter: drop-shadow(0 0 15px rgba(75, 0, 130, 0.8));
-            margin-bottom: -20px;
+            width: 90%;
+            max-width: 400px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9));
+            margin: 10px 0 20px 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="brand-centering">
-        <h1 class="regal-header text-3xl md:text-5xl gold-shimmer tracking-[0.15em] leading-tight">
+    <div class="main-wrapper">
+        <h1 class="regal-header text-3xl md:text-5xl gold-shimmer tracking-[0.1em] mb-4">
             CRESCENT CITY SHOFUR
         </h1>
         
-        <img src="https://platform.cstatic-images.com/xlarge/ambassador/v1/ev-guide/tesla-model-y-white.png" alt="Tesla Model Y" class="tesla-img mt-4">
+        <img src="https://www.tesla.com/inventory-assets/ms-ux/models/model-y.png" alt="Tesla Model Y" class="tesla-img">
 
-        <h2 class="text-[#d4af37] text-lg font-light italic tracking-widest mt-2 uppercase">
-            Premium Transportation
+        <h2 class="text-[#d4af37] text-sm font-semibold tracking-[0.3em] uppercase mb-10">
+            PREMIUM ECO SOLUTIONS TO TRANSPORTATION
         </h2>
-    </div>
 
-    <main class="w-full max-w-lg px-6 pb-20 mt-4">
-        <div class="glass-panel p-8">
-            <p class="text-center text-[10px] uppercase tracking-[0.4em] mb-6 text-gray-300">Reserve Your Ride</p>
-            
+        <div class="glass-panel p-8 mb-10">
+            <p class="text-[10px] uppercase tracking-[0.4em] text-gray-300 mb-6">Reserve Your Ride</p>
             <div class="space-y-4">
-                <input id="origin" type="text" placeholder="Pickup Location" class="input-field w-full p-4 rounded-xl text-sm">
-                <input id="destination" type="text" placeholder="Dropoff Location" class="input-field w-full p-4 rounded-xl text-sm">
-                <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-xl text-sm">
+                <input id="origin" type="text" placeholder="Pickup Location" class="input-field w-full p-4 rounded-xl">
+                <input id="destination" type="text" placeholder="Dropoff Location" class="input-field w-full p-4 rounded-xl">
+                <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-xl">
             </div>
 
-            <button onclick="calculateRide()" class="action-btn w-full mt-8 py-4 rounded-full text-xs transition active:scale-95">
+            <button onclick="calculateRide()" class="action-btn w-full mt-10 py-4 rounded-full text-xs">
                 Reserve Now
             </button>
             
-            <div id="results" class="hidden text-center mt-8 animate-fade-in">
-                <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-1">Impact Fee Estimate</p>
+            <div id="results" class="hidden mt-8 pt-8 border-t border-white/10">
                 <p id="displayPrice" class="text-6xl gold-shimmer font-light mb-8">$0.00</p>
-                <button onclick="alert('Confirming Details...')" class="w-full border border-[#fcf6ba] text-[#fcf6ba] py-3 rounded-full text-[10px] uppercase tracking-widest font-bold">
-                    Authorize via Stripe
+                <button onclick="alert('Proceeding to Authorization')" class="w-full border-2 border-[#fcf6ba] text-[#fcf6ba] py-4 rounded-full text-[10px] uppercase tracking-widest font-bold">
+                    Authorize Reservation
                 </button>
             </div>
         </div>
 
-        <div class="text-center mt-12">
-            <a href="tel:5044941915" class="regal-header text-3xl gold-shimmer tracking-widest">504-494-1915</a>
-            <p class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mt-2 font-bold">Trusted Tailored Ride For You</p>
+        <div class="mb-12">
+            <a href="tel:5044941915" class="regal-header text-2xl gold-shimmer tracking-widest">504-494-1915</a>
         </div>
-    </main>
 
-    <footer class="mt-auto py-10 opacity-40 text-[8px] uppercase tracking-[0.4em] text-center w-full px-6">
-        © 2026 Crescent City Shofur • New Orleans • Eco-Friendly Solutions
-    </footer>
+        <footer class="opacity-30 text-[9px] uppercase tracking-[0.4em]">
+            © 2026 Crescent City Shofur • New Orleans
+        </footer>
+    </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaPRyrkFfUOmhQktzRS6rd1jMrGMnuzgI&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIza...&callback=initMap" async defer></script>
 
     <script>
         let ds;
         function initMap() { ds = new google.maps.DistanceMatrixService(); }
-        
         function calculateRide() {
             const org = document.getElementById('origin').value;
             const dst = document.getElementById('destination').value.toLowerCase();
             if(!org || !dst) return alert("Please enter locations.");
 
-            // Airport Logic
             if (dst.includes("msy") || dst.includes("airport")) {
-                renderPrice(45);
-                return;
+                renderPrice(45); return;
             }
 
-            // Distance Matrix logic
-            ds.getDistanceMatrix({origins:[org], destinations:[dst], travelMode:'DRIVING', unitSystem:0}, (r, s) => {
-                if (s !== 'OK') return;
+            ds.getDistanceMatrix({origins:[org], destinations:[dst], travelMode:'DRIVING', unitSystem: 0}, (r, s) => {
+                if (s !== 'OK' || r.rows[0].elements[0].status !== 'OK') return;
                 const e = r.rows[0].elements[0];
-                if (e.status === 'OK') {
-                    const fee = 7 + (e.distance.value/1609 * 1.3) + (e.duration.value/60 * 0.5);
-                    renderPrice(Math.max(fee, 15));
-                }
+                const fee = 7 + (e.distance.value/1609 * 1.3) + (e.duration.value/60 * 0.5);
+                renderPrice(Math.max(fee, 15));
             });
         }
-
         function renderPrice(a) {
             document.getElementById('results').classList.remove('hidden');
             document.getElementById('displayPrice').innerText = `$${a.toFixed(2)}`;
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
