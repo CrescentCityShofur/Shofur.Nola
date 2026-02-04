@@ -9,202 +9,164 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --tesla-gold: #d4af37;
-            --deep-black: #050505;
+        :root { 
+            --burnished-gold: #b38728; 
+            --deep-black: #020202; 
         }
-
+        
         body { 
             font-family: 'Montserrat', sans-serif; 
             background-color: var(--deep-black); 
-            /* High-resolution Tesla Model Y White background */
-            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                              url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff; 
-            overflow-x: hidden;
+            /* Atmospheric NOLA Night Skyline Background */
+            background-image: 
+                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1549944850-84e00be4203b?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: #ffffff; overflow-x: hidden;
         }
 
         .regal-header { font-family: 'Cinzel', serif; }
 
         .gold-shimmer {
-            color: var(--tesla-gold);
+            color: var(--burnished-gold);
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 5s infinite linear;
-            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shimmer 5s infinite linear; background-size: 200% auto;
         }
 
         @keyframes shimmer { to { background-position: 200% center; } }
 
-        .gold-border { border: 1px solid var(--tesla-gold); }
-        
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(179, 135, 40, 0.4);
+            border-radius: 1.5rem;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
         .input-field {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(179, 135, 40, 0.2);
             transition: all 0.3s ease;
-            color: white;
         }
 
         .input-field:focus {
-            border-color: var(--tesla-gold);
-            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--burnished-gold);
+            background: rgba(255, 255, 255, 0.08);
             outline: none;
+            box-shadow: 0 0 10px rgba(179, 135, 40, 0.3);
         }
 
-        input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-            filter: invert(1) sepia(100%) saturate(500%) hue-rotate(10deg);
+        .action-button {
+            background: linear-gradient(135deg, #b38728 0%, #d4af37 100%);
+            color: black;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(179, 135, 40, 0.4);
         }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <nav class="p-6 flex justify-between items-center border-b border-white/10 backdrop-blur-md sticky top-0 z-50">
-        <div class="regal-header text-lg tracking-[0.2em] gold-shimmer uppercase">Consolidated Solutions</div>
-        <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-widest font-semibold">
-            <a href="mailto:CrescentCityShofur@gmail.com" class="border border-[#d4af37] px-4 py-1 text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition">Contact Agency</a>
-        </div>
+    <nav class="p-8 flex justify-center items-center border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
+        <div class="regal-header text-2xl tracking-[0.3em] gold-shimmer uppercase">Crescent City Shofur</div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
-        <div class="text-center mb-12">
-            <h2 class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-4 font-bold">Economic Development Agency</h2>
-            <h1 class="regal-header text-4xl md:text-6xl mb-2 gold-shimmer">Crescent City Shofur</h1>
-            <p class="text-gray-400 font-light italic text-sm font-bold uppercase tracking-widest">NOLA Infrastructure Consultations</p>
+    <main class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-16">
+            <h2 class="text-[11px] uppercase tracking-[0.6em] text-gray-500 mb-6 font-bold">Consolidated Solutions LLC</h2>
+            <p class="text-gray-300 font-light text-lg tracking-[0.1em] italic">Eco-Friendly Solutions to Transportation Needs</p>
+            <div class="h-[1px] w-24 bg-gradient-to-right from-transparent via-[#b38728] to-transparent mx-auto mt-6"></div>
         </div>
 
-        <div class="bg-black/80 backdrop-blur-2xl p-6 md:p-10 rounded-3xl gold-border shadow-2xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="glass-panel p-10 md:p-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 
-                <div class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-[9px] uppercase tracking-widest text-[#d4af37] mb-2 font-bold">Client Name</label>
-                            <input id="clientName" type="text" placeholder="Full Name" class="input-field w-full p-4 rounded-xl text-sm">
+                            <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Client Name</label>
+                            <input id="clientName" type="text" placeholder="Full Name" class="input-field w-full p-4 rounded-lg text-sm text-white">
                         </div>
                         <div>
-                            <label class="block text-[9px] uppercase tracking-widest text-[#d4af37] mb-2 font-bold">Mobile Number</label>
-                            <input id="clientPhone" type="tel" placeholder="(504) 000-0000" class="input-field w-full p-4 rounded-xl text-sm">
+                            <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Mobile Number</label>
+                            <input id="clientPhone" type="tel" placeholder="(504) 000-0000" class="input-field w-full p-4 rounded-lg text-sm text-white">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[9px] uppercase tracking-widest text-[#d4af37] mb-2 font-bold">Consultation Origin</label>
-                        <input id="origin" type="text" placeholder="Start Location" class="input-field w-full p-4 rounded-xl text-sm">
+                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Pickup Location</label>
+                        <input id="origin" type="text" placeholder="Start Address" class="input-field w-full p-4 rounded-lg text-sm text-white">
                     </div>
                     <div>
-                        <label class="block text-[9px] uppercase tracking-widest text-[#d4af37] mb-2 font-bold">Project Destination</label>
-                        <input id="destination" type="text" placeholder="End Location (or 'MSY Airport')" class="input-field w-full p-4 rounded-xl text-sm">
+                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Dropoff Location</label>
+                        <input id="destination" type="text" placeholder="End Address (or MSY Airport)" class="input-field w-full p-4 rounded-lg text-sm text-white">
                     </div>
                     <div>
-                        <label class="block text-[9px] uppercase tracking-widest text-[#d4af37] mb-2 font-bold">Start Time</label>
-                        <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-xl text-sm">
-                        <p id="timeWarning" class="text-red-400 text-[10px] mt-2 hidden italic font-bold">NOTICE: 2-HOUR LEAD TIME REQUIRED.</p>
+                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Reservation Time</label>
+                        <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-lg text-sm text-white">
+                        <p id="timeWarning" class="text-red-500 text-[10px] mt-3 hidden font-bold uppercase tracking-widest">Notice: 2-Hour Lead Time Required.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col justify-center items-center border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-10">
+                <div class="flex flex-col justify-center items-center border-t md:border-t-0 md:border-l border-white/5 pt-10 md:pt-0 md:pl-12">
                     <div id="results" class="text-center hidden animate-fade-in">
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-400 block mb-2 font-bold">Estimated Impact Fee</span>
-                        <div id="displayPrice" class="text-6xl font-light mb-6 gold-shimmer">$0.00</div>
-                        <button class="bg-[#d4af37] text-black w-full py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:scale-105 transition shadow-lg shadow-[#d4af37]/20">Authorize via Stripe</button>
+                        <span class="text-[10px] uppercase tracking-[0.4em] text-gray-500 block mb-3 font-bold">Estimated Impact Fee</span>
+                        <div id="displayPrice" class="text-7xl font-light mb-10 gold-shimmer">$0.00</div>
+                        <button onclick="showTos()" class="action-button w-full py-5 rounded-full font-bold uppercase text-[11px] tracking-[0.4em]">Authorize Reservation</button>
                     </div>
-                    <div id="idle-msg" class="text-gray-300 text-[11px] text-center font-light leading-relaxed uppercase tracking-widest">
-                        <p>Dispatching 2021 Model Y White Environment.</p>
-                        <p class="mt-2 text-[#d4af37] font-bold">MINIMUM FARE: $15.00</p>
+                    <div id="idle-msg" class="text-gray-500 text-[12px] text-center font-light leading-relaxed uppercase tracking-[0.2em]">
+                        <p>Premium Tesla Model Y Service</p>
+                        <p class="mt-3 text-[#b38728] font-bold">Zero Emissions • Luxury • Sustainable</p>
                     </div>
                 </div>
             </div>
 
-            <button onclick="calculateConsultation()" class="mt-10 w-full bg-white/10 border border-white/20 py-4 rounded-xl hover:border-[#d4af37] hover:text-[#d4af37] transition uppercase tracking-widest text-[11px] font-bold">
-                Generate Scope & Pricing
+            <button onclick="calculateConsultation()" class="mt-12 w-full bg-white/5 border border-white/10 py-5 rounded-xl hover:border-[#b38728] hover:text-[#b38728] transition uppercase tracking-[0.3em] text-[11px] font-bold">
+                Generate Secure Scope
             </button>
         </div>
 
-        <div id="tosOverlay" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md hidden">
-            <div class="bg-zinc-900 gold-border w-11/12 max-w-lg p-8 rounded-3xl shadow-2xl relative">
-                <h3 class="regal-header gold-shimmer text-xl mb-4 uppercase tracking-widest">Consultation Agreement</h3>
-                <div class="text-gray-300 text-xs leading-relaxed space-y-4 max-h-64 overflow-y-auto pr-2">
-                    <p><strong>1. Nature of Service:</strong> Professional eco-development consultations by Consolidated Solutions LLC.</p>
-                    <p><strong>2. Infrastructure:</strong> Fees contribute to the deployment of regional EV charging stations.</p>
-                    <p><strong>3. Lead Time:</strong> All bookings require 2 hours notice. No refunds for late arrivals.</p>
-                </div>
-                <div class="mt-8">
-                    <button onclick="acceptTos()" class="w-full bg-[#d4af37] text-black font-bold py-3 rounded-full uppercase text-[10px] tracking-[0.2em]">I Accept & Authorize</button>
-                </div>
-            </div>
+        <div class="mt-20 text-center text-gray-400">
+            <p class="regal-header text-xl tracking-widest mb-4 gold-shimmer">504-494-1915</p>
+            <p class="text-[10px] uppercase tracking-[0.5em] font-light">Trusted • Tailored • Local</p>
         </div>
     </main>
 
-    <footer class="text-center py-8 opacity-60">
-        <div class="text-[9px] tracking-widest uppercase space-y-2">
-            <p>Consolidated Solutions LLC | New Orleans, LA</p>
-            <p>(504) 494-1915 | CrescentCityShofur@gmail.com</p>
-        </div>
+    <footer class="py-12 border-t border-white/5 text-center opacity-40">
+        <p class="text-[9px] uppercase tracking-[0.4em]">© 2026 Crescent City Shofur • New Orleans • Eco-Friendly Transportation Solutions</p>
     </footer>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaPRyrkFfUOmhQktzRS6rd1jMrGMnuzgI&callback=initMap" async defer></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap" async defer></script>
     <script>
-    let distanceService;
-    function initMap() { distanceService = new google.maps.DistanceMatrixService(); }
-
-    function calculateConsultation() {
-        const pickupInput = document.getElementById('startTime').value;
-        const originAddr = document.getElementById('origin').value;
-        const destAddr = document.getElementById('destination').value.toLowerCase();
-        
-        if (!pickupInput || !originAddr || !destAddr) return alert("Please fill out all fields.");
-        
-        const now = new Date();
-        const selectedTime = new Date(pickupInput);
-        if ((selectedTime - now) / (1000 * 60 * 60) < 2) {
-            document.getElementById('timeWarning').classList.remove('hidden');
-            document.getElementById('results').classList.add('hidden');
-            return;
-        } else { document.getElementById('timeWarning').classList.add('hidden'); }
-
-        if (destAddr.includes("msy") || destAddr.includes("airport")) {
-            renderPrice(45.00); return;
+        let ds;
+        function initMap() { ds = new google.maps.DistanceMatrixService(); }
+        function calculateConsultation() {
+            const time = document.getElementById('startTime').value;
+            const org = document.getElementById('origin').value;
+            const dst = document.getElementById('destination').value.toLowerCase();
+            if (!time || !org || !dst) return alert("Fields required.");
+            const now = new Date(); const sel = new Date(time);
+            if ((sel - now) / 36e5 < 2) { document.getElementById('timeWarning').classList.remove('hidden'); return; }
+            document.getElementById('timeWarning').classList.add('hidden');
+            if (dst.includes("msy") || dst.includes("airport")) { renderPrice(45); return; }
+            ds.getDistanceMatrix({origins:[org], destinations:[dst], travelMode:'DRIVING', unitSystem:0}, (r, s) => {
+                if (s !== 'OK' || r.rows[0].elements[0].status !== 'OK') { alert("Check location."); return; }
+                const e = r.rows[0].elements[0];
+                const fee = 7 + (e.distance.value/1609 * 1.3) + (e.duration.value/60 * 0.5);
+                renderPrice(Math.max(fee, 15));
+            });
         }
-
-        distanceService.getDistanceMatrix({
-            origins: [originAddr], destinations: [destAddr],
-            travelMode: 'DRIVING', unitSystem: google.maps.UnitSystem.IMPERIAL,
-        }, (response, status) => {
-            if (status !== 'OK') { alert("Maps Error: " + status); return; }
-            const results = response.rows[0].elements[0];
-            if (results.status === 'OK') {
-                const distanceMiles = results.distance.value / 1609.34;
-                const durationMins = results.duration.value / 60;
-                const hour = selectedTime.getHours();
-                let base = (hour >= 22 || hour < 5) ? 10 : 7;
-                let total = base + (distanceMiles * 1.30) + (durationMins * 0.50);
-                renderPrice(Math.max(total, 15));
-            } else { alert("Location not found. Please be more specific."); }
-        });
-    }
-
-    function renderPrice(amount) {
-        document.getElementById('idle-msg').classList.add('hidden');
-        const res = document.getElementById('results');
-        res.classList.remove('hidden');
-        document.getElementById('displayPrice').innerText = `$${amount.toFixed(2)}`;
-        res.querySelector('button').setAttribute('onclick', 'showTos()');
-    }
-
-    function showTos() { document.getElementById('tosOverlay').classList.remove('hidden'); }
-
-    function acceptTos() { 
-        document.getElementById('tosOverlay').classList.add('hidden');
-        const client = document.getElementById('clientName').value;
-        const total = document.getElementById('displayPrice').innerText;
-        alert(`Success! Logging request for ${client}. Total: ${total}. Redirecting to Stripe Checkout...`); 
-    }
+        function renderPrice(a) {
+            document.getElementById('idle-msg').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('displayPrice').innerText = `$${a.toFixed(2)}`;
+        }
+        function showTos() { alert("Redirecting to Secure Authorization..."); }
     </script>
 </body>
 </html>
