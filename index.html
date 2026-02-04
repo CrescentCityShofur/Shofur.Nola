@@ -2,171 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consolidated Solutions LLC | Crescent City Shofur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crescent City Shofur | Regal Transportation</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root { 
-            --burnished-gold: #b38728; 
-            --deep-black: #020202; 
+            --gold: #fcf6ba; 
+            --deep-purple: #2e0854; 
+            --royal-purple: #4b0082;
         }
-        
+
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: var(--deep-black); 
-            /* Atmospheric NOLA Night Skyline Background */
+            background-color: #0a0118;
+            /* THEMED PURPLE GRADIENT BACKGROUND */
             background-image: 
-                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
-                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1549944850-84e00be4203b?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: #ffffff; overflow-x: hidden;
+                radial-gradient(circle at top, rgba(75,0,130,0.6) 0%, rgba(10,1,24,1) 80%),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            color: #ffffff;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .regal-header { font-family: 'Cinzel', serif; }
 
+        /* PURPLE & GOLD SHIMMER */
         .gold-shimmer {
-            color: var(--burnished-gold);
+            color: var(--gold);
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-            animation: shimmer 5s infinite linear; background-size: 200% auto;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 5s infinite linear; 
+            background-size: 200% auto;
         }
 
         @keyframes shimmer { to { background-position: 200% center; } }
 
+        /* FORCED CENTERING */
+        .brand-centering {
+            width: 100%;
+            text-align: center;
+            padding: 50px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .glass-panel {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(179, 135, 40, 0.4);
-            border-radius: 1.5rem;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            background: rgba(46, 8, 84, 0.4);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(252, 246, 186, 0.2);
+            box-shadow: 0 0 30px rgba(75, 0, 130, 0.5);
+            border-radius: 2rem;
         }
 
         .input-field {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(179, 135, 40, 0.2);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(252, 246, 186, 0.3);
+            color: white;
+            text-align: center;
         }
 
         .input-field:focus {
-            border-color: var(--burnished-gold);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.1);
             outline: none;
-            box-shadow: 0 0 10px rgba(179, 135, 40, 0.3);
         }
 
-        .action-button {
-            background: linear-gradient(135deg, #b38728 0%, #d4af37 100%);
-            color: black;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+        .action-btn {
+            background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 100%);
+            color: #1a0533;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.4);
         }
 
-        .action-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(179, 135, 40, 0.4);
+        .tesla-img {
+            width: 100%;
+            max-width: 350px;
+            filter: drop-shadow(0 0 15px rgba(75, 0, 130, 0.8));
+            margin-bottom: -20px;
         }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
 
-    <nav class="p-8 flex justify-center items-center border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
-        <div class="regal-header text-2xl tracking-[0.3em] gold-shimmer uppercase">Crescent City Shofur</div>
-    </nav>
+    <div class="brand-centering">
+        <h1 class="regal-header text-3xl md:text-5xl gold-shimmer tracking-[0.15em] leading-tight">
+            CRESCENT CITY SHOFUR
+        </h1>
+        
+        <img src="https://platform.cstatic-images.com/xlarge/ambassador/v1/ev-guide/tesla-model-y-white.png" alt="Tesla Model Y" class="tesla-img mt-4">
 
-    <main class="max-w-5xl mx-auto px-6 py-16">
-        <div class="text-center mb-16">
-            <h2 class="text-[11px] uppercase tracking-[0.6em] text-gray-500 mb-6 font-bold">Consolidated Solutions LLC</h2>
-            <p class="text-gray-300 font-light text-lg tracking-[0.1em] italic">Eco-Friendly Solutions to Transportation Needs</p>
-            <div class="h-[1px] w-24 bg-gradient-to-right from-transparent via-[#b38728] to-transparent mx-auto mt-6"></div>
-        </div>
+        <h2 class="text-[#d4af37] text-lg font-light italic tracking-widest mt-2 uppercase">
+            Premium Transportation
+        </h2>
+    </div>
 
-        <div class="glass-panel p-10 md:p-14">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                
-                <div class="space-y-8">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Client Name</label>
-                            <input id="clientName" type="text" placeholder="Full Name" class="input-field w-full p-4 rounded-lg text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Mobile Number</label>
-                            <input id="clientPhone" type="tel" placeholder="(504) 000-0000" class="input-field w-full p-4 rounded-lg text-sm text-white">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Pickup Location</label>
-                        <input id="origin" type="text" placeholder="Start Address" class="input-field w-full p-4 rounded-lg text-sm text-white">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Dropoff Location</label>
-                        <input id="destination" type="text" placeholder="End Address (or MSY Airport)" class="input-field w-full p-4 rounded-lg text-sm text-white">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-[#b38728] mb-3 font-bold">Reservation Time</label>
-                        <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-lg text-sm text-white">
-                        <p id="timeWarning" class="text-red-500 text-[10px] mt-3 hidden font-bold uppercase tracking-widest">Notice: 2-Hour Lead Time Required.</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col justify-center items-center border-t md:border-t-0 md:border-l border-white/5 pt-10 md:pt-0 md:pl-12">
-                    <div id="results" class="text-center hidden animate-fade-in">
-                        <span class="text-[10px] uppercase tracking-[0.4em] text-gray-500 block mb-3 font-bold">Estimated Impact Fee</span>
-                        <div id="displayPrice" class="text-7xl font-light mb-10 gold-shimmer">$0.00</div>
-                        <button onclick="showTos()" class="action-button w-full py-5 rounded-full font-bold uppercase text-[11px] tracking-[0.4em]">Authorize Reservation</button>
-                    </div>
-                    <div id="idle-msg" class="text-gray-500 text-[12px] text-center font-light leading-relaxed uppercase tracking-[0.2em]">
-                        <p>Premium Tesla Model Y Service</p>
-                        <p class="mt-3 text-[#b38728] font-bold">Zero Emissions • Luxury • Sustainable</p>
-                    </div>
-                </div>
+    <main class="w-full max-w-lg px-6 pb-20 mt-4">
+        <div class="glass-panel p-8">
+            <p class="text-center text-[10px] uppercase tracking-[0.4em] mb-6 text-gray-300">Reserve Your Ride</p>
+            
+            <div class="space-y-4">
+                <input id="origin" type="text" placeholder="Pickup Location" class="input-field w-full p-4 rounded-xl text-sm">
+                <input id="destination" type="text" placeholder="Dropoff Location" class="input-field w-full p-4 rounded-xl text-sm">
+                <input id="startTime" type="datetime-local" class="input-field w-full p-4 rounded-xl text-sm">
             </div>
 
-            <button onclick="calculateConsultation()" class="mt-12 w-full bg-white/5 border border-white/10 py-5 rounded-xl hover:border-[#b38728] hover:text-[#b38728] transition uppercase tracking-[0.3em] text-[11px] font-bold">
-                Generate Secure Scope
+            <button onclick="calculateRide()" class="action-btn w-full mt-8 py-4 rounded-full text-xs transition active:scale-95">
+                Reserve Now
             </button>
+            
+            <div id="results" class="hidden text-center mt-8 animate-fade-in">
+                <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-1">Impact Fee Estimate</p>
+                <p id="displayPrice" class="text-6xl gold-shimmer font-light mb-8">$0.00</p>
+                <button onclick="alert('Confirming Details...')" class="w-full border border-[#fcf6ba] text-[#fcf6ba] py-3 rounded-full text-[10px] uppercase tracking-widest font-bold">
+                    Authorize via Stripe
+                </button>
+            </div>
         </div>
 
-        <div class="mt-20 text-center text-gray-400">
-            <p class="regal-header text-xl tracking-widest mb-4 gold-shimmer">504-494-1915</p>
-            <p class="text-[10px] uppercase tracking-[0.5em] font-light">Trusted • Tailored • Local</p>
+        <div class="text-center mt-12">
+            <a href="tel:5044941915" class="regal-header text-3xl gold-shimmer tracking-widest">504-494-1915</a>
+            <p class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mt-2 font-bold">Trusted Tailored Ride For You</p>
         </div>
     </main>
 
-    <footer class="py-12 border-t border-white/5 text-center opacity-40">
-        <p class="text-[9px] uppercase tracking-[0.4em]">© 2026 Crescent City Shofur • New Orleans • Eco-Friendly Transportation Solutions</p>
+    <footer class="mt-auto py-10 opacity-40 text-[8px] uppercase tracking-[0.4em] text-center w-full px-6">
+        © 2026 Crescent City Shofur • New Orleans • Eco-Friendly Solutions
     </footer>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaPRyrkFfUOmhQktzRS6rd1jMrGMnuzgI&callback=initMap" async defer></script>
+
     <script>
         let ds;
         function initMap() { ds = new google.maps.DistanceMatrixService(); }
-        function calculateConsultation() {
-            const time = document.getElementById('startTime').value;
+        
+        function calculateRide() {
             const org = document.getElementById('origin').value;
             const dst = document.getElementById('destination').value.toLowerCase();
-            if (!time || !org || !dst) return alert("Fields required.");
-            const now = new Date(); const sel = new Date(time);
-            if ((sel - now) / 36e5 < 2) { document.getElementById('timeWarning').classList.remove('hidden'); return; }
-            document.getElementById('timeWarning').classList.add('hidden');
-            if (dst.includes("msy") || dst.includes("airport")) { renderPrice(45); return; }
+            if(!org || !dst) return alert("Please enter locations.");
+
+            // Airport Logic
+            if (dst.includes("msy") || dst.includes("airport")) {
+                renderPrice(45);
+                return;
+            }
+
+            // Distance Matrix logic
             ds.getDistanceMatrix({origins:[org], destinations:[dst], travelMode:'DRIVING', unitSystem:0}, (r, s) => {
-                if (s !== 'OK' || r.rows[0].elements[0].status !== 'OK') { alert("Check location."); return; }
+                if (s !== 'OK') return;
                 const e = r.rows[0].elements[0];
-                const fee = 7 + (e.distance.value/1609 * 1.3) + (e.duration.value/60 * 0.5);
-                renderPrice(Math.max(fee, 15));
+                if (e.status === 'OK') {
+                    const fee = 7 + (e.distance.value/1609 * 1.3) + (e.duration.value/60 * 0.5);
+                    renderPrice(Math.max(fee, 15));
+                }
             });
         }
+
         function renderPrice(a) {
-            document.getElementById('idle-msg').classList.add('hidden');
             document.getElementById('results').classList.remove('hidden');
             document.getElementById('displayPrice').innerText = `$${a.toFixed(2)}`;
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         }
-        function showTos() { alert("Redirecting to Secure Authorization..."); }
     </script>
 </body>
 </html>
