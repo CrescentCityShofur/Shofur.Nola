@@ -11,15 +11,16 @@
     <style>
         :root { 
             --gold: #fcf6ba; 
-            --midnight: #0a0118;
+            --nola-purple: #2e0854; 
         }
 
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: var(--midnight);
-            /* Cinematic Purple Glow Background */
+            background-color: #0a0118;
+            /* Cinematic Purple Glow to mimic NOLA Night Life */
             background-image: 
-                radial-gradient(circle at 50% 20%, rgba(75,0,130,0.6) 0%, rgba(10,1,24,1) 70%);
+                radial-gradient(circle at 50% 30%, rgba(75,0,130,0.8) 0%, rgba(10,1,24,1) 70%),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
             background-attachment: fixed;
             color: #ffffff;
             margin: 0;
@@ -43,22 +44,23 @@
         @keyframes shimmer { to { background-position: 200% center; } }
 
         .glass-panel {
-            background: rgba(46, 8, 84, 0.3);
+            background: rgba(46, 8, 84, 0.4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(252, 246, 186, 0.2);
-            border-radius: 30px;
+            border: 1px solid rgba(252, 246, 186, 0.3);
+            border-radius: 35px;
             width: 90%;
             max-width: 450px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
         }
 
         .input-style {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(252, 246, 186, 0.15);
+            border: 1px solid rgba(252, 246, 186, 0.2);
             color: white;
             text-align: center;
-            font-size: 16px !important; /* Fixes iOS zoom issue */
+            font-size: 16px !important;
+            border-radius: 15px;
         }
 
         .action-btn {
@@ -66,59 +68,76 @@
             color: #1a0533;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            letter-spacing: 0.15em;
+            border-radius: 50px;
+        }
+
+        /* Fixed Tesla Image Placement */
+        .tesla-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+            margin: -20px 0 20px 0;
         }
 
         .tesla-img {
-            width: 100%;
-            max-width: 420px;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,1));
-            margin: -30px 0 10px 0;
+            width: 90%;
+            max-width: 450px;
+            filter: drop-shadow(0 15px 25px rgba(75, 0, 130, 0.9));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
 
-    <header class="text-center pt-16 px-6 flex flex-col items-center">
-        <h1 class="regal-header text-4xl md:text-5xl gold-shimmer tracking-widest mb-2">
+    <header class="text-center pt-12 px-6">
+        <h1 class="regal-header text-3xl md:text-5xl gold-shimmer tracking-widest mb-1">
             CRESCENT CITY SHOFUR
         </h1>
-        <p class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-light mb-8">
-            Consolidated Solutions LLC
+        <p class="text-[9px] tracking-[0.5em] text-gray-400 uppercase font-bold opacity-70">
+            CONSOLIDATED SOLUTIONS LLC
         </p>
-        
-        <img src="https://www.tesla.com/inventory-assets/ms-ux/models/model-y.png" 
-             alt="Tesla Model Y" class="tesla-img">
-
-        <h2 class="text-[#d4af37] italic text-lg tracking-widest uppercase font-semibold">
-            Premium Transportation
-        </h2>
     </header>
 
-    <main class="glass-panel p-10 mt-8 mb-16">
-        <div class="space-y-5">
-            <input id="origin" type="text" placeholder="Pickup Location" class="input-style w-full p-4 rounded-xl">
-            <input id="destination" type="text" placeholder="Dropoff (or MSY Airport)" class="input-style w-full p-4 rounded-xl">
-            <input id="startTime" type="datetime-local" class="input-style w-full p-4 rounded-xl">
+    <div class="tesla-container">
+        <img src="https://platform.cstatic-images.com/xlarge/ambassador/v1/ev-guide/tesla-model-y-white.png" 
+             alt="2021 Tesla Model Y" class="tesla-img">
+    </div>
+
+    <h2 class="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase mb-8">
+        Premium Transportation
+    </h2>
+
+    <main class="glass-panel p-8 mb-16">
+        <p class="text-center text-[10px] uppercase tracking-[0.5em] text-gray-300 mb-6">Reserve Your Ride</p>
+        
+        <div class="space-y-4">
+            <input id="origin" type="text" placeholder="Pickup Location" class="input-style w-full p-4">
+            <input id="destination" type="text" placeholder="Dropoff (or MSY Airport)" class="input-style w-full p-4">
+            <input id="startTime" type="datetime-local" class="input-style w-full p-4">
         </div>
 
-        <button onclick="getEstimate()" class="action-btn w-full mt-10 py-4 rounded-full">
-            Reserve Now
+        <button onclick="getEstimate()" class="action-btn w-full mt-8 py-4 shadow-xl active:scale-95 transition">
+            Check Availability
         </button>
 
-        <div id="priceSection" class="hidden mt-10 pt-10 border-t border-white/10 text-center">
-            <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Estimated Fee</p>
-            <p id="priceOutput" class="text-6xl regal-header gold-shimmer mb-10 leading-none">$0.00</p>
-            <button onclick="alert('Confirming reservation details...')" class="w-full border-2 border-[#fcf6ba] text-[#fcf6ba] py-4 rounded-full uppercase text-[10px] tracking-widest font-bold">
-                Authorize via Stripe
+        <div id="priceSection" class="hidden mt-8 pt-8 border-t border-white/10 text-center">
+            <p id="priceOutput" class="text-6xl gold-shimmer font-light mb-8 leading-none">$0.00</p>
+            <button onclick="window.location.href='tel:5044941915'" class="w-full border-2 border-[#fcf6ba] text-[#fcf6ba] py-4 rounded-full uppercase text-[10px] tracking-widest font-bold">
+                Authorize via Phone
             </button>
         </div>
     </main>
 
     <div class="text-center pb-20">
-        <a href="tel:5044941915" class="regal-header text-3xl gold-shimmer tracking-widest">504-494-1915</a>
-        <p class="text-[10px] tracking-[0.4em] text-gray-500 uppercase mt-4 font-bold">Trusted • Tailored • Local</p>
+        <a href="tel:5044941915" class="regal-header text-2xl gold-shimmer tracking-widest">504-494-1915</a>
+        <p class="text-[10px] tracking-[0.4em] text-gray-500 uppercase mt-3 font-bold">Trusted • Tailored • Local</p>
     </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaPRyrkFfUOmhQktzRS6rd1jMrGMnuzgI&callback=initMap" async defer></script>
@@ -131,27 +150,20 @@
             const org = document.getElementById('origin').value;
             const dst = document.getElementById('destination').value.toLowerCase();
             
-            if(!org || !dst) return alert("Please enter trip logistics.");
+            if(!org || !dst) return alert("Please enter locations.");
 
             if (dst.includes("msy") || dst.includes("airport")) {
-                showPrice(45);
-                return;
+                showPrice(45); return;
             }
 
             ds.getDistanceMatrix({
-                origins: [org],
-                destinations: [dst],
-                travelMode: 'DRIVING',
-                unitSystem: google.maps.UnitSystem.IMPERIAL
-            }, (response, status) => {
-                if (status === 'OK' && response.rows[0].elements[0].status === 'OK') {
-                    const data = response.rows[0].elements[0];
-                    const miles = data.distance.value / 1609.34;
-                    const mins = data.duration.value / 60;
-                    const total = 7 + (miles * 1.30) + (mins * 0.50);
-                    showPrice(Math.max(total, 15));
-                } else {
-                    alert("Address not found. Please be more specific.");
+                origins: [org], destinations: [dst],
+                travelMode: 'DRIVING', unitSystem: 0
+            }, (r, s) => {
+                if (s === 'OK' && r.rows[0].elements[0].status === 'OK') {
+                    const d = r.rows[0].elements[0];
+                    const fee = 7 + (d.distance.value/1609 * 1.30) + (d.duration.value/60 * 0.50);
+                    showPrice(Math.max(fee, 15));
                 }
             });
         }
@@ -159,7 +171,6 @@
         function showPrice(amt) {
             document.getElementById('priceSection').classList.remove('hidden');
             document.getElementById('priceOutput').innerText = `$${amt.toFixed(2)}`;
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>
